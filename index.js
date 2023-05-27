@@ -19,7 +19,7 @@ app.get('/getMultiMedia', async (req, res) => {
   const url = req.query.url;
   console.log(url)
   const output = await getMultiMedia(url)
-  res.json(output)
+  res.json(output.data)
 });
 
 // Start the server
