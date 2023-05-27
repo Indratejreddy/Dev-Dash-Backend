@@ -1,6 +1,3 @@
-// env
-require('dotenv').config();
-
 const express = require('express');
 const cors = require('cors');
 
@@ -9,7 +6,6 @@ const getMultiMedia = require("./routes/getMultiMedia.js")
 
 const app = express();
 app.use(cors());
-
 
 // Route with query parameters
 app.get('/getTechStack', async (req, res) => {
@@ -27,6 +23,6 @@ app.get('/getMultiMedia', async (req, res) => {
 });
 
 // Start the server
-app.listen(process.env.PORT, () => {
-  console.log('Server is running on port',process.env.PORT);
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
 });
