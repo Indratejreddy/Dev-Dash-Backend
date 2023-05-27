@@ -25,9 +25,9 @@ function extractInformation(html) {
     const fontFamilySet = new Set();
     $('style').each((index, element) => {
         const style = $(element).html();
-        const fontFamilyMatches = style.match(/font-family:\s*([^;]+)/ig);
+        const fontFamilyMatches = style.match(/font-family:\s([^;]+)/ig);
         if (fontFamilyMatches) {
-            const fontFamily = fontFamilyMatches[0].replace(/font-family:\s*/i, '').replace(/['"]/g, '').trim();
+            const fontFamily = fontFamilyMatches[0].replace(/font-family:\s/i, '').replace(/['"]/g, '').trim();
             const fontFamilyFirst = fontFamily.split(',')[0].trim();
             fontFamilySet.add(fontFamilyFirst);
         }
